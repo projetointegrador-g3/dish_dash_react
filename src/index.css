@@ -1,6 +1,16 @@
 @import "tailwindcss";
 
 /*Configurações gerais*/
+:root {
+  --colorCyan: #209DA8;
+  --colorWhite: #f4f4f4;
+  --colorGrey: #191919;
+  --colorOffWhite: #fef0e1;
+  --colorRed: #d9291a;
+  --colorYellow: #ffa314;
+}
+
+
 body{
   font-family: "Poppins", sans-serif;
   background-color: #fef0e1
