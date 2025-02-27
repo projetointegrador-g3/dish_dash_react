@@ -1,22 +1,12 @@
-import { ChartDonut, Devices, Video } from '@phosphor-icons/react'
+import { BowlSteam, Carrot, ChartDonut, Devices, Hamburger, Popcorn, Video } from '@phosphor-icons/react'
 import Footer from '../../components/footer/Footer';
+import NavbarInicio from '../../components/navbarinicio/NavbarInicio';
 
 function Inicio (){
     return (
         <>
         <div>
-            <header className="flex justify-around">
-                <img className="w-30" src="https://i.imgur.com/pxKDdcY.png" alt="" />
-                <nav className="flex items-center gap-4">
-                    <ul className="flex gap-4">
-                        <li><a href="#">Dashboard</a></li>
-                        <li><a href="#Service">Serviços</a></li>
-                        <li><a href="#About">Sobre Nós</a></li>
-                        <li><a href="#Contact">Contato</a></li>
-                    </ul>
-                    <button className="bg-[#ffa314] p-1.5 px-5 rounded-md cursor-pointer text-[#fef0e1] hover:bg-[#d9291a] hover:scale-105">Login</button>
-                </nav>
-            </header>
+            <NavbarInicio />
             <main>
                 <section className="flex justify-around items-center pl-40 gap-4">
                     <div>
@@ -25,11 +15,23 @@ function Inicio (){
                         
                         <p className='text-xl'>Cadastre o seu restaurante e ganhe mais clientes <br />
                          e impulsione suas vendas com o Dish Dash</p>
-                        <div className="flex">
-                            <p>🟨</p>
-                            <p>🟩</p>
-                            <p>🟥</p>
-                            <p>🟪</p>
+                        <div className="flex gap-3 mt-5">
+                            <p className='bg-[#ffa314] rounded p-2 hover:scale-110'>
+                                <Hamburger className='size-6'/>
+                            </p>
+
+                            <p className='bg-[#209DA8] rounded p-2 hover:scale-110'>
+                                <Carrot className='size-6'/>
+                            </p>
+
+                            <p className='bg-[#D9291A] rounded p-2 hover:scale-110 '>
+                                <BowlSteam  className='size-6'/>
+                            </p>
+
+                            <p className='bg-[#8F20A8] rounded p-2 hover:scale-110'>
+                                <Popcorn className='size-6'/>
+                            </p>
+                            
                         </div>
                     </div>
 
@@ -58,7 +60,7 @@ function Inicio (){
                         <div>
                             <h1 className="text-[#d9291a] text-3xl font-bold mb-4 text-center">Para o seu cliente</h1>
                         </div>
-                    <div className='flex items-center justify-center gap-20 px-20 py-10'>
+                    <div className='flex items-center justify-center gap-25 py-10'>
                         
 
                         <div className='flex flex-col items-center'>
