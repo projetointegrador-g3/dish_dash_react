@@ -2,6 +2,7 @@ import { Label } from "@radix-ui/react-label";
 import { cn } from "../../utils/cn";
 import { Input } from "../ui/input";
 import { Link } from "react-router-dom";
+import { Button } from "../ui/button";
 
 
 export function LoginForm({
@@ -53,7 +54,7 @@ export function LoginForm({
 
 
           {/* Botões */}
-          <button type='submit' className='login-button w-full border border-[#d9291a]'>Entrar</button>
+          <Button type='submit' className='w-full'>Entrar</Button>
 
           {/* Barra horizontal */}
           <div className='relative text-center text-sm '>
