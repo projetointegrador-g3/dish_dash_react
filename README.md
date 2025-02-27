@@ -28,7 +28,7 @@ O projeto consiste no desenvolvimento do frontend de uma aplicação de Delivery
   - Footer
 
 <div align="center">
-    <img src="public/diagrama_frontend.png" title="diagrama DOM" width="80%"/>
+    <img src="https://ik.imagekit.io/vp8x0spqk/Generation/DOM.png?updatedAt=1740685241937" title="diagrama DOM" width="80%"/>
 </div>
 
 ------
