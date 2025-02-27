@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom"
 import { ToastContainer } from "react-toastify"
-import Home from "./pages/home/Home"
+import Inicio from "./pages/inicio/Inicio"
 
 
 function App() {
@@ -11,7 +11,8 @@ function App() {
 
       <Routes>
         <Route>
-          <Route path="/" element={<Home />} />
+          
+          <Route path="/" element={<Inicio />} />
   
         </Route>
       </Routes>
