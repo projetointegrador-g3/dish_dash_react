@@ -8,14 +8,12 @@ function App() {
   return (
     <>
       <ToastContainer />
-
       <Routes>
         <Route>
-          
           <Route path="/" element={<Inicio />} />
-  
         </Route>
       </Routes>
+      
     </>
   )
 }
