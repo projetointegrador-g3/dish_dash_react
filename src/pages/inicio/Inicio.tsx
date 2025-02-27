@@ -1,4 +1,5 @@
 import { ChartDonut, Devices, Video } from '@phosphor-icons/react'
+import Footer from '../../components/footer/Footer';
 
 function Inicio (){
     return (
@@ -53,29 +54,29 @@ function Inicio (){
                     </div>
                 </section>
 
-                <section>
-                        <div className='mt-20'>
+                <section className='py-20'>
+                        <div>
                             <h1 className="text-[#d9291a] text-3xl font-bold mb-4 text-center">Para o seu cliente</h1>
                         </div>
                     <div className='flex items-center justify-center gap-20 px-20 py-10'>
                         
 
                         <div className='flex flex-col items-center'>
-                            <img className='w-60' src="https://ik.imagekit.io/grupo03/DishDash/pedido.svg?updatedAt=1740677098036" alt="Ilustração de uma jovem fazendo pedido no aplicativo" />
+                            <img className='w-60 hover:scale-110 hover:animate-wiggle' src="https://ik.imagekit.io/grupo03/DishDash/pedido.svg?updatedAt=1740677098036" alt="Ilustração de uma jovem fazendo pedido no aplicativo" />
                             <h2 className='text-lg font-semibold'>Economia e variedade</h2>
                             <p>Promoções para todo tipo de refeição</p>
                         </div>
 
                         <div className='flex flex-col items-center'>
-                            <img className='w-60 m-10' src="https://ik.imagekit.io/grupo03/DishDash/restaurantes.svg?updatedAt=1740677098949" alt="Ilustração de uma jovem fazendo pedido no aplicativo" />
+                            <img className='w-60 m-10 hover:scale-110 hover:animate-wiggle' src="https://ik.imagekit.io/grupo03/DishDash/restaurantes.svg?updatedAt=1740677098949" alt="Ilustração de uma jovem fazendo pedido no aplicativo" />
                             <h2 className='text-lg font-semibold'>Restaurantes Verificados</h2>
-                            <p>Promoções para todo tipo de refeição</p>
+                            <p>Para sua segurança e satisfação</p>
                         </div>
 
                         <div className='flex flex-col items-center'>
-                            <img className='w-60' src="https://ik.imagekit.io/grupo03/DishDash/entrega.svg?updatedAt=1740677098857" alt="Ilustração de uma jovem fazendo pedido no aplicativo" />
-                            <h2 className='text-lg font-semibold'>Economia e variedade</h2>
-                            <p>Promoções para todo tipo de refeição</p>
+                            <img className='w-60 hover:scale-110 hover:animate-wiggle' src="https://ik.imagekit.io/grupo03/DishDash/entrega.svg?updatedAt=1740677098857" alt="Ilustração de uma jovem fazendo pedido no aplicativo" />
+                            <h2 className='text-lg font-semibold'>Fácil de pedir</h2>
+                            <p>Rápido de chegar</p>
                         </div>
 
                     </div>
@@ -83,7 +84,7 @@ function Inicio (){
                     
                 </section>
             </main>
-            <footer></footer>
+            <Footer />
         </div>
         </>
     )
