@@ -1,4 +1,4 @@
-import { FacebookLogo, GithubLogo, InstagramLogo, LinkedinLogo, YoutubeLogo } from '@phosphor-icons/react';
+import { GithubLogo, InstagramLogo, LinkedinLogo } from '@phosphor-icons/react';
 import Footer from '../../components/footer/Footer';
 
 function Sobre() {
@@ -19,7 +19,7 @@ function Sobre() {
                         { nome: 'Emily Cristiny', emoji: '🔧', img: 'Emily.png', desc: 'Estudante de Engenharia de Software e desenvolvedora FullStack em mais de 3 linguagens de programação.' },
                         { nome: 'Bruno Lima', emoji: '🎯', img: 'Bruno.png', desc: 'Como alguém que veio da área acadêmica e está migrando para a tecnologia, uso meu TDAH como um superpoder.' },
                         { nome: 'Josadaque Ferreira', emoji: '🛠️', img: 'Josadaque.png', desc: 'Como ex-ajudante de obra, migrei para a tecnologia e sou apaixonado por back-end.' },
-                        { nome: 'Victor Pestana', emoji: '🌍', img: 'Victor.png', desc: 'Vivendo anos na Europa, adquiri inglês fluente e estudo segurança da informação.' },
+                        { nome: 'Victor Pestana', emoji: '🌍', img: 'Victor.png', desc: 'Vivendo anos na Europa, adquiri inglês fluente e estudo sistemas da informação.' },
                         { nome: 'Fernanda Ribeiro', emoji: '🎨', img: 'Fernanda.png', desc: 'Formada em Adm, com expertise na área de design, e fazendo transição para tecnologia.' },
                     ].map((dev, index) => (
                         <section key={index} className='flex gap-5 items-start'>

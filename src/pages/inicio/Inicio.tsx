@@ -9,11 +9,11 @@ function Inicio (){
             <main>
                 <section className="flex justify-around items-center py-5 pl-22">
                     <div>
-                        <h1 className="text-6xl font-bold mb-4">Pedido fácil,</h1>
-                        <h1 className="text-6xl font-bold mb-4">entrega ágil!</h1>
+                        <h1 className="text-6xl font-bold mb-4">Sua fome não espera,</h1>
+                        <h1 className="text-6xl font-bold mb-4">a gente também não!</h1>
                         
-                        <p className='text-xl'>Cadastre o seu restaurante e ganhe mais clientes <br />
-                         e impulsione suas vendas com o Dish Dash</p>
+                        <p className='text-xl'>Cadastre o seu restaurante, ganhe mais clientes <br />
+                         e impulsione suas vendas com o Dish Dash.</p>
                         <div className="flex gap-3 mt-5">
                             <p className='bg-[#ffa314] rounded p-2 hover:scale-110'>
                                 <Hamburger className='size-6'/>

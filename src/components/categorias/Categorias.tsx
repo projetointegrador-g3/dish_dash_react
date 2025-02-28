@@ -1,6 +1,8 @@
+import { PencilLine, PlusSquare, Trash } from "@phosphor-icons/react";
 import { useCategoriaFunctions } from "./CategoriaFunction";
 import "./Categorias.css"; 
 import * as react from '@phosphor-icons/react';
+import { Input } from "../ui/input";
 
 const initialCategoria = [
   { id: 1, name: "Vegetariano", icon: <react.Archive /> },
@@ -44,24 +46,25 @@ export default function Produto() {
           <span>Categorias</span>
           <button 
             onClick={openAddModal}
-            className="bg-[var(--colorYellow)] text-black px-4 py-3 rounded flex items-center gap-3 hover:bg-[var(--colorYellowDark)] hover:scale-105 transition duration-300 ease-in-out"
+            className="bg-[var(--colorYellow)]  px-4 py-3 rounded flex items-center gap-3 hover:text-[var(--colorOffWhite)] hover:bg-[var(--colorRed)] cursor-pointer hover:scale-105 transition duration-300 ease-in-out"
           >
-            Adicionar nova Categoria
+            <PlusSquare className=""/> 
+            <p className="text-sm font-semibold">Adicionar nova Categoria</p>
           </button>
         </h2>
 
         {/* Ajuste da grid para centralizar os itens */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 pr-3 justify-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 pr-3 justify-center mt-10">
           {categoriaList.map((categoria) => (
             <div key={categoria.id} className="bg-white p-4 rounded-lg shadow-2xl relative">
               <h3 className="text-xl font-semibold mt-3 text-center">{categoria.name}</h3>
               <div className="absolute top-2 right-2 flex gap-2">
                 {/* Botões de editar e excluir */}
-                <button className="text-gray-500 hover:text-blue-500" onClick={() => openEditModal(categoria)}>
-                  EDITAR
+                <button className="text-gray-500 hover:text-[var(--colorCyan)] cursor-pointer" onClick={() => openEditModal(categoria)}>
+                  <PencilLine />
                 </button>
-                <button className="text-gray-500 hover:text-red-500" onClick={() => openDeleteModal(categoria)}>
-                  DELETAR
+                <button className="text-gray-500 hover:text-[var(--colorRed)] cursor-pointer" onClick={() => openDeleteModal(categoria)}>
+                  <Trash />
                 </button>
               </div>
             </div>
@@ -76,8 +79,8 @@ export default function Produto() {
             <h3 className="text-[var(--colorRed)] text-xl font-semibold mb-4">Editar Produto</h3>
             <form onSubmit={(e) => e.preventDefault()}>
               <div className="mb-4">
-                <label className="block text-sm font-semibold">Nome</label>
-                <input
+                <label className="block text-sm font-semibold"></label>
+                <Input
                   type="text"
                   name="name"
                   value={editCategoria?.name || ""}
@@ -85,11 +88,11 @@ export default function Produto() {
                   className="border px-4 py-2 rounded w-full bg-white"
                 />
               </div>
-              <div className="flex justify-between">
-                <button type="button" onClick={closeEditModal} className="text-[var(--colorBlack)] bg-red-600 px-4 py-2 rounded">
+              <div className="flex justify-center gap-5 mt-4 ">
+                <button type="button" onClick={closeEditModal} className="bg-[var(--colorRed)] text-[var(--colorWhite)] cursor-pointer px-4 py-2 rounded hover:bg-[var(--colorRed1)]">
                   Cancelar
                 </button>
-                <button type="button" onClick={saveCategoria} className="bg-green-500 text-white px-4 py-2 rounded">
+                <button type="button" onClick={saveCategoria} className="bg-[var(--colorCyan)] text-[var(--colorWhite)] cursor-pointer px-4 py-2 rounded hover:bg-[var(--colorCyan1)]">
                   Salvar
                 </button>
               </div>
@@ -103,12 +106,12 @@ export default function Produto() {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center backdrop-blur-md bg-black/60">
           <div className="bg-[var(--colorOffWhite)] p-6 rounded-lg w-full sm:w-96 z-50">
             <h3 className="text-[var(--colorRed)] text-xl font-semibold mb-4">Deletar Produto</h3>
-            <p>Você tem certeza que deseja excluir a categoria: {categoriaToDelete?.name}?</p>
-            <div className="flex justify-between mt-4">
-              <button type="button" onClick={closeDeleteModal} className="text-[var(--colorBlack)] bg-gray-300 px-4 py-2 rounded">
+            <p>Você tem certeza que deseja excluir a categoria:<span className="font-semibold"> {categoriaToDelete?.name}</span>?</p>
+            <div className="flex justify-center gap-5 mt-4 ">
+              <button type="button" onClick={closeDeleteModal} className="bg-[var(--colorRed)] text-[var(--colorWhite)] cursor-pointer px-4 py-2 rounded hover:bg-[var(--colorRed1)]">
                 Cancelar
               </button>
-              <button type="button" onClick={() => deleteCategoria(categoriaToDelete?.id)} className="bg-red-600 text-white px-4 py-2 rounded">
+              <button type="button" onClick={() => deleteCategoria(categoriaToDelete?.id)} className="bg-[var(--colorCyan)] text-[var(--colorWhite)] cursor-pointer px-6 py-2 rounded hover:bg-[var(--colorCyan1)] ">
                 Deletar
               </button>
             </div>
@@ -120,23 +123,25 @@ export default function Produto() {
       {isAddModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center backdrop-blur-md bg-black/60">
           <div className="bg-[var(--colorOffWhite)] p-6 rounded-lg w-full sm:w-96 z-50">
-            <h3 className="text-[var(--colorRed)] text-xl font-semibold mb-4">Adicionar categoria</h3>
+            <h3 className="text-[var(--colorRed)] text-xl font-semibold mb-4">
+              Adicionar categoria</h3>
             <form onSubmit={(e) => e.preventDefault()}>
               <div className="mb-4">
-                <label className="block text-sm font-semibold">Nome</label>
-                <input
+                <label className="block text-sm font-semibold"></label>
+                <Input
                   type="text"
                   name="name"
+                  placeholder="Digite a nova categoria"
                   value={newCategoria?.name || ""}
                   onChange={handleNewCategoriaInputChange}
-                  className="border px-4 py-2 rounded w-full bg-white"
+                  className="w-full bg-[var(--colorWhite)]"
                 />
               </div>
-              <div className="flex justify-between">
-                <button type="button" onClick={closeAddModal} className="bg-red-600 px-4 py-2 rounded">
+              <div className="flex justify-center gap-5 mt-4">
+                <button type="button" onClick={closeAddModal} className="bg-[var(--colorRed)] text-[var(--colorWhite)] cursor-pointer px-4 py-2 rounded hover:bg-[var(--colorRed1)]">
                   Cancelar
                 </button>
-                <button type="button" onClick={handleAddCategoria} className="bg-green-500 text-white px-4 py-2 rounded">
+                <button type="button" onClick={handleAddCategoria} className="bg-[var(--colorCyan)] text-[var(--colorWhite)] cursor-pointer px-4 py-2 rounded hover:bg-[var(--colorCyan1)]">
                   Adicionar
                 </button>
               </div>
