@@ -1,110 +1,128 @@
 import { useState } from "react";
 
 export const useProdutoFunctions = (initialProducts) => {
-  const [productList, setProductList] = useState(initialProducts);
-  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
-  const [isDeleteModalOpen, setIsDeleteModalOpen] = useState(false);
-  const [isAddModalOpen, setIsAddModalOpen] = useState(false);  
-  const [editedProduct, setEditedProduct] = useState(null);
-  const [productToDelete, setProductToDelete] = useState(null);
-  const [newProduct, setNewProduct] = useState({ name: "", price: "", category: "", image: "" }); 
+  const [listaProdutos, setListaProdutos] = useState(initialProducts);
+  const [estaAbertoModalEdicao, setEstaAbertoModalEdicao] = useState(false);
+  const [estaAbertoModalExclusao, setEstaAbertoModalExclusao] = useState(false);
+  const [estaAbertoModalAdicao, setEstaAbertoModalAdicao] = useState(false);
+  const [produtoEditado, setProdutoEditado] = useState(null);
+  const [produtoParaExcluir, setProdutoParaExcluir] = useState(null);
+  const [novoProduto, setNovoProduto] = useState({ nome: "", preco: "", foto: "", info_nutricionais: "" });
 
-  const formatPrice = (value) => {
-    const parsedValue = parseFloat(value).toFixed(2);  
-    return `R$${parsedValue.replace('.', ',')}`;
+  // Função para formatar o preço
+  const formatarPreco = (value) => {
+    const parsedValue = parseFloat(value.replace(',', '.')).toFixed(2);  // Garantir que a vírgula seja tratada corretamente
+    return `R$${parsedValue.replace('.', ',')}`;  // Substitui o ponto por vírgula
   };
 
-  const openEditModal = (product) => {
-    setEditedProduct(product);
-    setIsEditModalOpen(true);
+  // Função para abrir o modal de edição
+  const abrirModalEdicao = (produto) => {
+    setProdutoEditado(produto);
+    setEstaAbertoModalEdicao(true);
   };
 
-  const closeEditModal = () => {
-    setIsEditModalOpen(false);
-    setEditedProduct(null);
+  // Função para fechar o modal de edição
+  const fecharModalEdicao = () => {
+    setEstaAbertoModalEdicao(false);
+    setProdutoEditado(null);
   };
 
-  const saveProduct = () => {
-    const updatedProducts = productList.map((product) =>
-      product.id === editedProduct.id ? editedProduct : product
+  // Função para salvar o produto editado
+  const salvarProduto = () => {
+    const produtosAtualizados = listaProdutos.map((produto) =>
+      produto.id === produtoEditado.id ? produtoEditado : produto
     );
-    setProductList(updatedProducts);
-    closeEditModal();
+    setListaProdutos(produtosAtualizados);
+    fecharModalEdicao();
   };
 
-  const openDeleteModal = (product) => {
-    setProductToDelete(product);
-    setIsDeleteModalOpen(true);
+  // Função para abrir o modal de exclusão
+  const abrirModalExclusao = (produto) => {
+    setProdutoParaExcluir(produto);
+    setEstaAbertoModalExclusao(true);
   };
 
-  const closeDeleteModal = () => {
-    setIsDeleteModalOpen(false);
-    setProductToDelete(null);
+  // Função para fechar o modal de exclusão
+  const fecharModalExclusao = () => {
+    setEstaAbertoModalExclusao(false);
+    setProdutoParaExcluir(null);
   };
 
-  const deleteProduct = () => {
-    const updatedProducts = productList.filter((product) => product.id !== productToDelete.id);
-    setProductList(updatedProducts);
-    closeDeleteModal();
+  // Função para excluir o produto
+  const excluirProduto = () => {
+    const produtosAtualizados = listaProdutos.filter((produto) => produto.id !== produtoParaExcluir.id);
+    setListaProdutos(produtosAtualizados);
+    fecharModalExclusao();
   };
 
-  const handleInputChange = (e) => {
+  // Função para lidar com mudanças no formulário de edição
+  const lidarComMudancaDeInput = (e) => {
     const { name, value } = e.target;
-    if (name === "price") {
-      setEditedProduct((prevProduct) => ({
-        ...prevProduct,
-        [name]: formatPrice(value),
+    if (name === "preco") {
+      setProdutoEditado((prevProduto) => ({
+        ...prevProduto,
+        [name]: formatarPreco(value),
       }));
     } else {
-      setEditedProduct((prevProduct) => ({
-        ...prevProduct,
+      setProdutoEditado((prevProduto) => ({
+        ...prevProduto,
         [name]: value,
       }));
     }
   };
 
-  const openAddModal = () => {
-    setNewProduct({ name: "", price: "", category: "", image: "" });
-    setIsAddModalOpen(true);
+  // Função para abrir o modal de adição
+  const abrirModalAdicao = () => {
+    setNovoProduto({ nome: "", preco: "", foto: "", info_nutricionais: "" });
+    setEstaAbertoModalAdicao(true);
   };
 
-  const closeAddModal = () => {
-    setIsAddModalOpen(false);
+  // Função para fechar o modal de adição
+  const fecharModalAdicao = () => {
+    setEstaAbertoModalAdicao(false);
   };
 
-  const handleAddProduct = () => {
-    const updatedProducts = [...productList, { ...newProduct, id: Date.now() }];
-    setProductList(updatedProducts);
-    closeAddModal();
+  // Função para adicionar um novo produto
+  const adicionarProduto = () => {
+    const produtosAtualizados = [...listaProdutos, { ...novoProduto, id: Date.now() }];
+    setListaProdutos(produtosAtualizados);
+    fecharModalAdicao();
   };
 
-  const handleNewProductInputChange = (e) => {
+  // Função para lidar com mudanças no formulário de novo produto
+  const lidarComMudancaDeInputNovoProduto = (e) => {
     const { name, value } = e.target;
-    if (name === "price") {
-      setNewProduct((prevProduct) => ({ ...prevProduct, [name]: formatPrice(value) }));
+    if (name === "preco") {
+      setNovoProduto((prevProduto) => ({
+        ...prevProduto,
+        [name]: formatarPreco(value),
+      }));
     } else {
-      setNewProduct((prevProduct) => ({ ...prevProduct, [name]: value }));
+      setNovoProduto((prevProduto) => ({
+        ...prevProduto,
+        [name]: value,
+      }));
     }
   };
 
   return {
-    productList,
-    isEditModalOpen,
-    isDeleteModalOpen,
-    isAddModalOpen, 
-    editedProduct,
-    productToDelete,
-    newProduct, 
-    openEditModal,
-    closeEditModal,
-    saveProduct,
-    openDeleteModal,
-    closeDeleteModal,
-    deleteProduct,
-    openAddModal, 
-    closeAddModal, 
-    handleInputChange,
-    handleAddProduct, 
-    handleNewProductInputChange, 
+    listaProdutos,
+    estaAbertoModalEdicao,
+    estaAbertoModalExclusao,
+    estaAbertoModalAdicao,
+    produtoEditado,
+    produtoParaExcluir,
+    novoProduto,
+    abrirModalEdicao,
+    fecharModalEdicao,
+    salvarProduto,
+    abrirModalExclusao,
+    fecharModalExclusao,
+    excluirProduto,
+    abrirModalAdicao,
+    fecharModalAdicao,
+    lidarComMudancaDeInput,
+    adicionarProduto,
+    lidarComMudancaDeInputNovoProduto,
   };
 };
