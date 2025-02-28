@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useProdutoFunctions } from "./ProdutoFunctions";
-import { FaSearch, FaEdit, FaTrash, FaPlus } from "react-icons/fa";
+import { FaEdit, FaTrash, FaPlus } from "react-icons/fa";
 import "./produto.css";
 
 export default function Produto() {
