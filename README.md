@@ -76,8 +76,18 @@ Ele pode ser usado com bibliotecas como Redux para gerenciamento de estado e fra
 
 ------
 <br>
+## 4. Figma
 
-## 4. Configuração e Execução
+<div align="center">
+    <img src="https://ik.imagekit.io/vp8x0spqk/Generation/figma.jpeg?updatedAt=1740707256357" title="Style Guide" width="80%"/>
+</div>
+
+Link para acesso: https://www.figma.com/design/dljRf3j3Z3Jj3tXl7uUk5n/DishDash---Front?node-id=13-24&t=UmC92yhoC3KSlZWo-0
+
+------
+<br>
+
+## 5. Configuração e Execução
 
 1. Clone o repositório
 2. Instale as dependências: `yarn`
@@ -86,7 +96,7 @@ Ele pode ser usado com bibliotecas como Redux para gerenciamento de estado e fra
 ------
 <br>
 
-## 5. Colaboradores
+## 6. Colaboradores
 `@ZarathosFreya`
 `@Beatriz-Rodrigues-P`
 `@brunop-lima`
