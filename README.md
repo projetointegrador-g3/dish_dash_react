@@ -1,4 +1,4 @@
-# DishDash - Frontend
+# DishDash - Front-End
 
 <br />
 
@@ -10,22 +10,29 @@
 
 ## 1. Descrição
 
-O projeto consiste no desenvolvimento do frontend de uma aplicação de Delivery de Alimentos utilizando TypeScript, HTML e CSS e o framework React. O objetivo é criar uma User Interface (UI) responsiva, dinamica e intuitiva que promova uma boa User Experience (UX) para o usuario final.
+O projeto consiste no desenvolvimento do Front-End de uma aplicação de delivery de alimentos utilizando TypeScript, HTML, CSS e React. O objetivo é criar uma User Interface (UI) responsiva, dinâmica e intuitiva que promova uma User Experience (UX) de excelência para usuários e empresas.
 
-### 1.1 Paginas
+### 1.1 Páginas
 
+  - Início
+  - Login
   - Home
   - About
-  - Login
-  - Configuração
-  - Perfil
+
 
 ### 1.2 Componentes
 
   - Navbar
+  - NavbarInicio
   - Sidebar
   - Notificação
   - Footer
+  - Perfil
+  - Configuração
+  - Categorias
+  - Produtos
+  - UI (Button, input e label)
+
 
 <div align="center">
     <img src="https://ik.imagekit.io/vp8x0spqk/Generation/DOM.png?updatedAt=1740685241937" title="diagrama DOM" width="80%"/>
@@ -36,9 +43,9 @@ O projeto consiste no desenvolvimento do frontend de uma aplicação de Delivery
 
 ## 2. Sobre
 
-<strong>React</strong> é uma biblioteca JavaScript para a construção de interfaces de usuário interativas e eficientes. Criada pelo Facebook, ela facilita o desenvolvimento de aplicações web e mobile ao utilizar o conceito de componentes reutilizáveis, que atualizam a interface de forma dinâmica sem precisar recarregar a página inteira.
+<strong>React</strong> é uma biblioteca JavaScript que tem a finalidade de construir interfaces interativas e eficientes para usuários. Criada pelo Facebook, ela facilita o desenvolvimento de aplicações web e mobile ao utilizar o conceito de componentes reutilizáveis, que atualizam a interface de forma dinâmica sem precisar recarregar a página inteira.
 
-Seu diferencial é o <strong>Virtual DOM</strong>, que otimiza a atualização da interface, tornando a aplicação mais rápida e responsiva. Além disso, React é baseado em um fluxo de dados unidirecional, o que melhora a previsibilidade do código.
+Seu diferencial é o <strong>Virtual DOM</strong>, que otimiza a atualização da interface, tornando a aplicação mais rápida e responsiva. Além disso, o React é baseado em um fluxo de dados unidirecional, o que melhora a previsibilidade do código.
 
 Ele pode ser usado com bibliotecas como Redux para gerenciamento de estado e frameworks como Next.js para aplicações server-side render.
 
@@ -83,7 +90,7 @@ Ele pode ser usado com bibliotecas como Redux para gerenciamento de estado e fra
     <img src="https://ik.imagekit.io/vp8x0spqk/Generation/figma.jpeg?updatedAt=1740707256357" title="Style Guide" width="80%"/>
 </div>
 
-Link para acesso: https://www.figma.com/design/dljRf3j3Z3Jj3tXl7uUk5n/DishDash---Front?node-id=13-24&t=UmC92yhoC3KSlZWo-0
+[Confira o projeto completo no Figma](https://www.figma.com/design/dljRf3j3Z3Jj3tXl7uUk5n/DishDash---Front?node-id=13-24&t=UmC92yhoC3KSlZWo-0)
 
 ------
 <br>
@@ -102,7 +109,6 @@ Link para acesso: https://www.figma.com/design/dljRf3j3Z3Jj3tXl7uUk5n/DishDash--
 `@Beatriz-Rodrigues-P`
 `@brunop-lima`
 `@emilyestvz`
-
 `@fern-menezes`
 `@Josadack`
 `@VictorPestana`
