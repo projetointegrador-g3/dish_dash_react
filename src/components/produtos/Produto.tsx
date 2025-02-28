@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useProdutoFunctions } from "./ProdutoFunctions";
 import { FaSearch, FaEdit, FaTrash, FaPlus } from "react-icons/fa";
 import "./produto.css";
+import { Pencil, PlusSquare, Trash } from "@phosphor-icons/react";
+import { Input } from "../ui/input";
 
 export default function Produto() {
   const [listaProdutos, setListaProdutos] = useState([]);
@@ -93,14 +95,15 @@ export default function Produto() {
           <span>Produtos</span>
           <button
             onClick={abrirModalAdicao}
-            className="bg-[var(--colorYellow)] text-black px-4 py-3 rounded flex items-center gap-3 hover:bg-[var(--colorYellowDark)] hover:scale-105 transition duration-300 ease-in-out"
+            className="bg-[var(--colorYellow)]  px-4 py-3 rounded flex items-center gap-3 hover:text-[var(--colorOffWhite)] hover:bg-[var(--colorRed)] cursor-pointer hover:scale-105 transition duration-300 ease-in-out"
           >
-            <FaPlus /> Adicionar novo produto
+            <PlusSquare className=""/> 
+            <p className="text-sm font-semibold">Adicionar nova Categoria</p>
           </button>
         </h2>
 
         {erroCarregamento && (
-          <p className="text-red-500 text-center mb-4">
+          <p className="text-[var(--colorRed)] text-center mb-4">
             Houve um erro ao carregar os produtos. Tente novamente.
           </p>
         )}
@@ -135,16 +138,16 @@ export default function Produto() {
 
               <div className="absolute top-2 right-2 flex gap-2">
                 <button
-                  className="text-gray-500 hover:text-blue-500"
+                  className="text-gray-500 hover:text-[var(--colorCyan)]"
                   onClick={() => abrirModalEdicao(produto)}
                 >
-                  <FaEdit />
+                  <Pencil />
                 </button>
                 <button
-                  className="text-gray-500 hover:text-red-500"
+                  className="text-gray-500 hover:text-[var(--colorRed)]"
                   onClick={() => abrirModalExclusao(produto)}
                 >
-                  <FaTrash />
+                  <Trash />
                 </button>
               </div>
             </div>
@@ -163,7 +166,7 @@ export default function Produto() {
               {/* Campos de edição */}
               <div className="mb-4">
                 <label className="block text-sm font-semibold">Nome</label>
-                <input
+                <Input
                   type="text"
                   name="nome"
                   value={produtoEditado?.nome || ""}
@@ -173,7 +176,7 @@ export default function Produto() {
               </div>
               <div className="mb-4">
                 <label className="block text-sm font-semibold">Preço</label>
-                <input
+                <Input
                   type="text"
                   name="preco"
                   value={produtoEditado?.preco || ""}
@@ -183,15 +186,17 @@ export default function Produto() {
               </div>
               <div className="mb-4">
                 <label className="block text-sm font-semibold">Categoria</label>
-                <select
+                <select 
                   name="categoria"
                   value={produtoEditado?.categoria || ""}
                   onChange={lidarComMudancaDeInput}
-                  className="border px-4 py-2 rounded w-full bg-white"
+                  className="border border-stone-400 px-4 py-2 rounded-md w-full bg-white"
                 >
                   <option value="" disabled>
                     Selecione uma categoria
                   </option>
+
+            
                   {categorias.map((categoria) => (
                     <option key={categoria.id} value={categoria.id}>
                       {categoria.categoria}
@@ -204,7 +209,7 @@ export default function Produto() {
                 <label className="block text-sm font-semibold">
                   Informações Nutricionais
                 </label>
-                <input
+                <Input
                   type="text"
                   name="info_nutricionais"
                   value={produtoEditado?.info_nutricionais || ""}
@@ -214,25 +219,25 @@ export default function Produto() {
               </div>
               <div className="mb-4">
                 <label className="block text-sm font-semibold">Foto</label>
-                <input
+                <Input
                   type="file"
                   name="foto"
                   onChange={(e) => lidarComMudancaDeInput(e, "foto")}
                   className="border px-4 py-2 rounded w-full bg-white"
                 />
               </div>
-              <div className="flex justify-between">
+              <div className="flex justify-center gap-6 mt-4">
                 <button
                   type="button"
                   onClick={fecharModalEdicao}
-                  className="text-[var(--colorBlack)] bg-red-600 px-4 py-2 rounded"
+                  className="bg-[var(--colorRed)] text-[var(--colorWhite)] cursor-pointer px-4 py-2 rounded hover:bg-[var(--colorRed1)]"
                 >
                   Cancelar
                 </button>
                 <button
-                  type="button"
+                  type="button" 
                   onClick={salvarProduto}
-                  className="bg-green-500 text-white px-4 py-2 rounded"
+                  className="bg-[var(--colorCyan)] text-[var(--colorWhite)] cursor-pointer px-6 py-2 rounded hover:bg-[var(--colorCyan1)]"
                 >
                   Salvar
                 </button>
@@ -253,7 +258,7 @@ export default function Produto() {
               {/* Campos de adição */}
               <div className="mb-4">
                 <label className="block text-sm font-semibold">Nome</label>
-                <input
+                <Input
                   type="text"
                   name="nome"
                   value={novoProduto.nome || ""}
@@ -263,7 +268,7 @@ export default function Produto() {
               </div>
               <div className="mb-4">
                 <label className="block text-sm font-semibold">Preço</label>
-                <input
+                <Input
                   type="text"
                   name="preco"
                   value={novoProduto.preco || ""}
@@ -277,7 +282,7 @@ export default function Produto() {
                   name="categoria"
                   value={novoProduto.categoria || ""}
                   onChange={lidarComMudancaDeInputNovoProduto}
-                  className="border px-4 py-2 rounded w-full bg-white"
+                  className="border border-stone-400 px-4 py-2 rounded w-full bg-white"
                 >
                   <option value="" disabled>
                     Selecione uma categoria
@@ -293,7 +298,7 @@ export default function Produto() {
                 <label className="block text-sm font-semibold">
                   Informações Nutricionais
                 </label>
-                <input
+                <Input
                   type="text"
                   name="info_nutricionais"
                   value={novoProduto.info_nutricionais || ""}
@@ -303,7 +308,7 @@ export default function Produto() {
               </div>
               <div className="mb-4">
                 <label className="block text-sm font-semibold">Foto</label>
-                <input
+                <Input
                   type="file"
                   name="foto"
                   onChange={(e) => lidarComMudancaDeInputNovoProduto(e, "foto")}
@@ -314,14 +319,14 @@ export default function Produto() {
                 <button
                   type="button"
                   onClick={fecharModalAdicao}
-                  className="text-[var(--colorBlack)] bg-red-600 px-4 py-2 rounded"
+                  className="bg-[var(--colorRed)] text-[var(--colorWhite)] cursor-pointer px-4 py-2 rounded hover:bg-[var(--colorRed1)]"
                 >
                   Cancelar
                 </button>
                 <button
                   type="button"
                   onClick={adicionarProduto}
-                  className="bg-green-500 text-white px-4 py-2 rounded"
+                  className="bg-[var(--colorCyan)] text-[var(--colorWhite)] cursor-pointer px-4 py-2 rounded hover:bg-[var(--colorCyan1)]"
                 >
                   Adicionar
                 </button>
@@ -335,25 +340,25 @@ export default function Produto() {
       {estaAbertoModalExclusao && produtoParaExcluir && (
         <div className="fixed inset-0 flex justify-center items-center backdrop-blur-md bg-black/60">
           <div className="bg-[var(--colorOffWhite)] p-6 rounded-lg w-full sm:w-96 z-50">
-            <h3 className="text-red-600 text-xl font-semibold mb-4">
+            <h3 className="text-[var(--colorRed)] text-xl font-semibold mb-4 ">
               Confirmar Exclusão
             </h3>
             <p>
               Tem certeza de que deseja excluir o produto{" "}
               <span className="font-bold">{produtoParaExcluir.nome}</span>?
             </p>
-            <div className="flex justify-between mt-4">
+            <div className="flex justify-center gap-5 mt-4 ">
               <button
                 type="button"
                 onClick={fecharModalExclusao}
-                className="text-[var(--colorBlack)] bg-red-600 px-4 py-2 rounded"
+                className="bg-[var(--colorRed)] text-[var(--colorWhite)] cursor-pointer px-4 py-2 rounded hover:bg-[var(--colorRed1)]"
               >
                 Cancelar
               </button>
               <button
                 type="button"
                 onClick={() => excluirProduto(produtoParaExcluir.id)}
-                className="bg-green-500 text-white px-4 py-2 rounded"
+                className="bg-[var(--colorCyan)] text-[var(--colorWhite)] cursor-pointer px-6 py-2 rounded hover:bg-[var(--colorCyan1)]"
               >
                 Excluir
               </button>

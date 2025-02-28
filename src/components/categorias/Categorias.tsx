@@ -88,7 +88,7 @@ export default function Produto() {
                   className="border px-4 py-2 rounded w-full bg-white"
                 />
               </div>
-              <div className="flex justify-center gap-5 mt-4 ">
+              <div className="flex justify-center gap-5 mt-4">
                 <button type="button" onClick={closeEditModal} className="bg-[var(--colorRed)] text-[var(--colorWhite)] cursor-pointer px-4 py-2 rounded hover:bg-[var(--colorRed1)]">
                   Cancelar
                 </button>
