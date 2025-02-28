@@ -83,7 +83,7 @@ Ele pode ser usado com bibliotecas como Redux para gerenciamento de estado e fra
     <img src="https://ik.imagekit.io/vp8x0spqk/Generation/figma.jpeg?updatedAt=1740707256357" title="Style Guide" width="80%"/>
 </div>
 
-Link para acesso: https://www.figma.com/design/dljRf3j3Z3Jj3tXl7uUk5n/DishDash---Front?node-id=13-24&t=UmC92yhoC3KSlZWo-0
+[Confira o projeto completo no Figma](https://www.figma.com/design/dljRf3j3Z3Jj3tXl7uUk5n/DishDash---Front?node-id=13-24&t=UmC92yhoC3KSlZWo-0)
 
 ------
 <br>
