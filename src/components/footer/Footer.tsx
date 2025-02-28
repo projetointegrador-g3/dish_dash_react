@@ -1,11 +1,10 @@
 import { FacebookLogo, InstagramLogo, LinkedinLogo, YoutubeLogo, } from '@phosphor-icons/react'
 
-// components/footer/Footer.js
 function Footer() {
     return (
         <>
             <footer className='bg-[#d9291a] text-[#fef0e1] flex items-center justify-around gap-5 py-10 px-20'>
-                <div>
+                <div className='flex items-center'>
                     <a href="#">
                     <img className='w-15' src="https://ik.imagekit.io/grupo03/DishDash/logo-dd.png?updatedAt=1740669256073" alt="" />
                     </a>
