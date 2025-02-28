@@ -7,7 +7,7 @@ function Inicio (){
         <div>
             
             <main>
-                <section className="flex justify-around items-center pr-20 gap-4">
+                <section className="flex justify-around items-center py-5 pl-22">
                     <div>
                         <h1 className="text-6xl font-bold mb-4">Pedido fácil,</h1>
                         <h1 className="text-6xl font-bold mb-4">entrega ágil!</h1>
@@ -37,16 +37,16 @@ function Inicio (){
                     <img className="w-130" src="/inicio.gif" alt="Delivery Boy" />
                 </section>
 
-                <section id="service" className="text-center pr-20">
-                    <div className="bg-[#d9291a] p-20 flex items-center justify-around text-[#fef0e1]">
-                        <img className="w-100" src="https://ik.imagekit.io/grupo03/DishDash/gestao.svg?updatedAt=1740670005773" alt="" />
+                <section id="service" className="text-center ">
+                    <div className="bg-[#d9291a] p-20 flex items-center justify-around text-[#fef0e1] pl-25">
+                        <img className="w-90" src="https://ik.imagekit.io/grupo03/DishDash/gestao.svg?updatedAt=1740670005773" alt="" />
                         <div className="flex flex-col gap-4 text-start ">
-                            <div className=''>
+                            <div>
                                 <p className='text-sm mb-2'>Sobre o projeto</p>
                                 <h2 className="text-3xl font-semibold mb-2">Para Empresas</h2>
-                                <p className='flex items-center gap-2 text-xl mb-2'><ChartDonut />Dashboards Personalizados para melhor gestão do seu negócio</p>
-                                <p className='flex items-center gap-2 text-xl mb-2'><Devices />Sistema intuitivo e com ótimo custo benefício</p>
-                                <p className='flex items-center gap-2 text-xl mb-2'><Video />Treinamento e suporte facilitado para toda a equipe</p>
+                                <p className='flex items-center gap-2 text-md mb-2'><ChartDonut />Dashboards personalizados para melhor gestão do seu negócio</p>
+                                <p className='flex items-center gap-2 text-md mb-2'><Devices />Sistema intuitivo e com ótimo custo benefício</p>
+                                <p className='flex items-center gap-2 text-md mb-2'><Video />Treinamento e suporte facilitado para toda a equipe</p>
                             </div>
                             <div>
                                 <button className="bg-[#fef0e1] text-[#d9291a] p-2 rounded-md w-30 m-auto cursor-pointer hover:bg-[#d9291a] border border-[#fef0e1] hover:text-[#fef0e1]"> Ver mais </button>
@@ -55,7 +55,7 @@ function Inicio (){
                     </div>
                 </section>
 
-                <section className='py-20 pr-20'>
+                <section className='py-20'>
                         <div>
                             <h1 className="text-[#d9291a] text-3xl font-bold mb-4 text-center">Para o seu cliente</h1>
                         </div>

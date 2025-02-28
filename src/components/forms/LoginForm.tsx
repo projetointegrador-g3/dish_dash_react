@@ -68,7 +68,7 @@ export function LoginForm({
           </div>
         </div>
 
-        <div className='text-center text-sm pt-3'>
+        <div className='text-center text-sm'>
           Ainda não tem uma conta?{' '}
           <Link to='/register' className='text-orange-700'>
             Cadastre-se!

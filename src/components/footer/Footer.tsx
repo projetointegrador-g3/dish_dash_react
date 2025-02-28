@@ -1,17 +1,21 @@
 import { FacebookLogo, InstagramLogo, LinkedinLogo, YoutubeLogo, } from '@phosphor-icons/react'
 
+// components/footer/Footer.js
 function Footer() {
     return (
         <>
-            <footer className='bg-[#d9291a] text-[#fef0e1] flex items-center justify-around gap-5 py-10 pr-20 rounded'>
+            <footer className='bg-[#d9291a] text-[#fef0e1] flex items-center justify-around gap-5 py-10 px-20'>
                 <div>
+                    <a href="#">
                     <img className='w-15' src="https://ik.imagekit.io/grupo03/DishDash/logo-dd.png?updatedAt=1740669256073" alt="" />
-                    <p>Seu restaurante favorito, em casa.</p>
+                    </a>
+                    
+                    <p>Transformando refeições em momentos especiais.</p>
                 </div>
 
                 <div>
                     <p><a href="" className='hover:underline'>Termos e Condições</a></p>
-                    <p><a href="" className='hover:underline'>Política de Prvacidade</a></p>
+                    <p><a href="" className='hover:underline'>Política de Privacidade</a></p>
                     <p><a href="" className='hover:underline'>Trabalhe Conosco</a></p>
                 </div>
 
