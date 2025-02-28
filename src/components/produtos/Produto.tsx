@@ -97,7 +97,7 @@ export default function Produto() {
             className="bg-[var(--colorYellow)]  px-4 py-3 rounded flex items-center gap-3 hover:text-[var(--colorOffWhite)] hover:bg-[var(--colorRed)] cursor-pointer hover:scale-105 transition duration-300 ease-in-out"
           >
             <PlusSquare className=""/> 
-            <p className="text-sm font-semibold">Adicionar nova Categoria</p>
+            <p className="text-sm font-semibold">Adicionar novo Produto</p>
           </button>
         </h2>
 

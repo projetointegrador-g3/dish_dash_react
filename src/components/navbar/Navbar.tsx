@@ -28,6 +28,7 @@ function Navbar() {
     
     // Navbar com Busca, Perfil e Sair
     return (
+        <>
         <header className="flex justify-between items-center navbar_dash
         p-8 pb-0 w-full mb-3 transition-all">
 
@@ -46,7 +47,8 @@ function Navbar() {
                 </span>
                 <span className="cursor-pointer flex items-center gap-1 font-bold"><Link to="/">Sair</Link><SignOut size={20}/></span>
             </div>
-
         </header>
+
+        </>
     )
 } export default Navbar
