@@ -5,14 +5,14 @@ function NavbarInicio (){
         <>
         <div>
             <header className="flex justify-around gap-70" >
-                <a href="#">
+                <a href="/">
                 <img className="w-30" src="https://i.imgur.com/pxKDdcY.png" alt="" />
                 </a>
                 
                 <nav className="flex items-center gap-4">
                     <ul className="flex gap-4">
                         <li><Link to="/home">Dashboard</Link></li>
-                        <li><a href="#service">Serviços</a></li>
+                        <li><a href="/#service">Serviços</a></li>
                         <li><Link to="/sobre"> Sobre Nós</Link></li>
                         <li><a href="#contact">Contato</a></li>
                     </ul>
