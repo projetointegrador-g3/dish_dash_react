@@ -10,6 +10,8 @@ import Sidebar from "./components/sidebar/Sidebar";
 import Inicio from "./pages/inicio/Inicio";
 import Perfil from "./components/perfil/Perfil";
 import Configuracao from "./components/settings/Configuracao";
+import Produto from "./components/produtos/Produto";
+
 
 export default function App() {
   const location = useLocation(); // Obtém a localização atual do navegador.
@@ -39,6 +41,7 @@ export default function App() {
                 <Route path="/sobre" element={<Sobre />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/categorias" element={<Categorias />} />
+                <Route path="/produtos" element={<Produto />} />
                 <Route path="/perfil" element={<Perfil />} />
                 <Route path="/configuracoes" element={<Configuracao />} />
               </Routes> 

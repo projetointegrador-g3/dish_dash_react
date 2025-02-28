@@ -1,8 +1,15 @@
 import axios from "axios";
 
 const api = axios.create({
+<<<<<<< HEAD
+    baseURL: "https://dish-dash-1.onrender.com/",
+    headers: {
+        'Content-Type': 'application/json',
+    },
+=======
     baseURL: 'https://dish-dash-1.onrender.com/swagger'
 
+>>>>>>> f6cc7ff85ea6036bdeca1ae8e5d3766810a9fd04
 })
 
 export const cadastrar = async (url: string, dados: Object, setDados: Function, header: Object) => {
