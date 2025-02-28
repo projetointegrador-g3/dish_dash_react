@@ -76,6 +76,7 @@ Ele pode ser usado com bibliotecas como Redux para gerenciamento de estado e fra
 
 ------
 <br>
+
 ## 4. Figma
 
 <div align="center">
