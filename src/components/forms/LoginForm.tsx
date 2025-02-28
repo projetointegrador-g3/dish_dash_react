@@ -19,7 +19,7 @@ export function LoginForm({
           </p>
         </div>
   
-        {/*  */}
+        {/* Inicio Forms */}
         <div className='grid gap-6'>
           <div className='grid gap-2'>
             <Label htmlFor='email'>Email</Label>

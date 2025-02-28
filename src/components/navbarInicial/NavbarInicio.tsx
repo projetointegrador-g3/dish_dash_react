@@ -3,10 +3,9 @@ import { Link } from "react-router-dom";
 function NavbarInicio (){
     return (
         <>
-        <div>
             <header className="flex justify-around gap-70" >
                 <a href="/">
-                <img className="w-30" src="https://i.imgur.com/pxKDdcY.png" alt="" />
+                <img className="w-20" src="https://i.imgur.com/pxKDdcY.png" alt="" />
                 </a>
                 
                 <nav className="flex items-center gap-4">
@@ -19,7 +18,6 @@ function NavbarInicio (){
                     <button className="bg-[#ffa314] p-1.5 px-5 rounded-md cursor-pointer text-[#fef0e1] hover:bg-[#d9291a] hover:scale-105"><Link to="/login">Login</Link></button>
                 </nav>
             </header>
-        </div>
         </>
     )
 }
