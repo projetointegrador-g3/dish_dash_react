@@ -10,9 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@nestjs/swagger": "^11.0.5",
     "@phosphor-icons/react": "^2.1.7",
     "@radix-ui/react-label": "^2.1.2",
     "@tailwindcss/vite": "^4.0.9",
+    "autoprefixer": "^10.4.20",
     "axios": "^1.8.1",
     "bootstrap": "^5.3.3",
     "class-variance-authority": "^0.7.1",

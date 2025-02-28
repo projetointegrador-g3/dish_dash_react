@@ -27,7 +27,6 @@ export default App
   return (
     <>
       <ToastContainer />
-
       <Routes>
         <Route>
           <Route path="/" element={<Home />} />
@@ -35,6 +34,7 @@ export default App
   
         </Route>
       </Routes>
+      
     </>
   )
 }
