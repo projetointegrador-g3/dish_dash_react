@@ -318,15 +318,9 @@ export default function Produto() {
                 />
               </div>
               <div className="mb-4">
-<<<<<<< HEAD
                 <label className="block text-sm font-semibold">Foto</label>
                 <Input
                   type="file"
-=======
-                <label className="block text-sm font-semibold">Foto (URL)</label>
-                <input
-                  type="text"
->>>>>>> 97aadb36ed7e61f71b79bea7ed1b13aaba148a95
                   name="foto"
                   value={novoProduto.foto || ""}
                   onChange={lidarComMudancaDeInputNovoProduto}
