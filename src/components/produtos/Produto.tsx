@@ -105,51 +105,61 @@ export default function Produto() {
           </p>
         )}
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 pr-3 justify-center">
-          {listaProdutos.map((produto, index) => (
-            <div
-              key={produto.id || index}
-              className="bg-white p-4 rounded-lg shadow-2xl relative"
-            >
-              <h3 className="text-xl font-semibold mt-3 text-center">
-                {produto.nome || "Sem Nome"}
-              </h3>
-              <p className="text-gray-600 text-lg text-center mt-1">
-                {produto.preco ? `R$ ${produto.preco}` : "Preço indisponível"}
-              </p>
-              <p className="text-gray-500 text-lg text-center mt-1">
-                {produto.categoria
-                  ? `Categoria: ${produto.categoria}`
-                  : "Categoria não informada"}
-              </p>
-              <p className="text-gray-500 text-lg text-center mt-1">
-                {produto.info_nutricionais &&
-                typeof produto.info_nutricionais === "object"
-                  ? Object.entries(produto.info_nutricionais).map(([key, value]) => (
-                      <span key={key} className="block">{`${key}: ${value}`}</span>
-                    ))
-                  : produto.info_nutricionais
-                  ? produto.info_nutricionais // Se for uma string (caso de dado não-objeto)
-                  : "Sem informações nutricionais"}
-              </p>
+<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 pr-3 justify-center">
+  {listaProdutos.map((produto, index) => (
+    <div
+      key={produto.id || index}
+      className="bg-white p-4 rounded-lg shadow-2xl relative"
+    >
+      {/* Exibição da imagem do produto */}
+      {produto.foto && (
+        <img
+          src={produto.foto} // A URL da foto do produto
+          alt={produto.nome || "Imagem do Produto"}
+          className="w-full h-48 object-cover rounded-md mb-4"
+        />
+      )}
 
-              <div className="absolute top-2 right-2 flex gap-2">
-                <button
-                  className="text-gray-500 hover:text-blue-500"
-                  onClick={() => abrirModalEdicao(produto)}
-                >
-                  <FaEdit />
-                </button>
-                <button
-                  className="text-gray-500 hover:text-red-500"
-                  onClick={() => abrirModalExclusao(produto)}
-                >
-                  <FaTrash />
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
+      <h3 className="text-xl font-semibold mt-3 text-center">
+        {produto.nome || "Sem Nome"}
+      </h3>
+      <p className="text-gray-600 text-lg text-center mt-1">
+        {produto.preco ? `R$ ${produto.preco}` : "Preço indisponível"}
+      </p>
+      <p className="text-gray-500 text-lg text-center mt-1">
+        {produto.categoria
+          ? `Categoria: ${produto.categoria}`
+          : "Categoria não informada"}
+      </p>
+      <p className="text-gray-500 text-lg text-center mt-1">
+        {produto.info_nutricionais &&
+        typeof produto.info_nutricionais === "object"
+          ? Object.entries(produto.info_nutricionais).map(([key, value]) => (
+              <span key={key} className="block">{`${key}: ${value}`}</span>
+            ))
+          : produto.info_nutricionais
+          ? produto.info_nutricionais // Se for uma string (caso de dado não-objeto)
+          : "Sem informações nutricionais"}
+      </p>
+
+      <div className="absolute top-2 right-2 flex gap-2">
+        <button
+          className="text-gray-500 hover:text-blue-500"
+          onClick={() => abrirModalEdicao(produto)}
+        >
+          <FaEdit />
+        </button>
+        <button
+          className="text-gray-500 hover:text-red-500"
+          onClick={() => abrirModalExclusao(produto)}
+        >
+          <FaTrash />
+        </button>
+      </div>
+    </div>
+  ))}
+</div>
+
       </main>
 
       {/* Modal de edição */}
