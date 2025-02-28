@@ -1,11 +1,12 @@
 import { GithubLogo, InstagramLogo, LinkedinLogo } from '@phosphor-icons/react'
+import Footer from '../../components/footer/Footer';
 
 function Sobre() {
     return(
         <>
         {/*<NavbarInicio />*/}
 
-        <section className='py-30 px-20 flex flex-col gap-10 items-center justify-center'>
+        <section className='py-10 pr-20 flex flex-col gap-10 items-center justify-center'>
             <div className='text-center'>
                 <h1 className='text-3xl font-bold'>Conheça nosso talentoso time</h1>
                 <p>Esse é o grupo de pessoas que transformou o Dish Dash em realidade, um time de <br />

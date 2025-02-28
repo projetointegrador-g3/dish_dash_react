@@ -1,14 +1,13 @@
 import { BowlSteam, Carrot, ChartDonut, Devices, Hamburger, Popcorn, Video } from '@phosphor-icons/react'
 import Footer from '../../components/footer/Footer';
-import NavbarInicio from '../../components/navbarinicio/NavbarInicio';
 
 function Inicio (){
     return (
         <>
         <div>
-            <NavbarInicio />
+            
             <main>
-                <section className="flex justify-around items-center pl-40 gap-4">
+                <section className="flex justify-around items-center pr-20 gap-4">
                     <div>
                         <h1 className="text-6xl font-bold mb-4">Pedido fácil,</h1>
                         <h1 className="text-6xl font-bold mb-4">entrega ágil!</h1>
@@ -38,7 +37,7 @@ function Inicio (){
                     <img className="w-130" src="/inicio.gif" alt="Delivery Boy" />
                 </section>
 
-                <section className="text-center">
+                <section id="service" className="text-center pr-20">
                     <div className="bg-[#d9291a] p-20 flex items-center justify-around text-[#fef0e1]">
                         <img className="w-100" src="https://ik.imagekit.io/grupo03/DishDash/gestao.svg?updatedAt=1740670005773" alt="" />
                         <div className="flex flex-col gap-4 text-start ">
@@ -56,7 +55,7 @@ function Inicio (){
                     </div>
                 </section>
 
-                <section className='py-20'>
+                <section className='py-20 pr-20'>
                         <div>
                             <h1 className="text-[#d9291a] text-3xl font-bold mb-4 text-center">Para o seu cliente</h1>
                         </div>

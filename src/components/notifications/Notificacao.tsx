@@ -21,7 +21,7 @@ const Notificacao = () => {
     )}
 
     return (
-        <div className="mt-4 space-y-3 ml-3 mr-150">
+        <div className="mt-4 space-y-3 ml-3 mr-185">
             {notificacoes.map((notif) => (
             <div
                 key={notif.id}

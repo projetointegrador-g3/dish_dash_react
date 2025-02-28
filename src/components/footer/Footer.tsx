@@ -3,7 +3,7 @@ import { FacebookLogo, InstagramLogo, LinkedinLogo, YoutubeLogo, } from '@phosph
 function Footer() {
     return (
         <>
-            <footer className='bg-[#d9291a] text-[#fef0e1] flex items-center justify-around gap-5 py-10'>
+            <footer className='bg-[#d9291a] text-[#fef0e1] flex items-center justify-around gap-5 py-10 pr-20 rounded'>
                 <div>
                     <img className='w-15' src="https://ik.imagekit.io/grupo03/DishDash/logo-dd.png?updatedAt=1740669256073" alt="" />
                     <p>Seu restaurante favorito, em casa.</p>

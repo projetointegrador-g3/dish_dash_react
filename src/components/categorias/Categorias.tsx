@@ -7,6 +7,7 @@ import {
   UsersThree, 
 } from '@phosphor-icons/react';
 import { ToastAlert } from '../../utils/ToastAlert';
+import Navbar from '../navbar/Navbar';
 
 const categorias = [
   { nome: "Vegetariano", icone: Archive },
@@ -22,6 +23,7 @@ const categorias = [
 
 function Categorias() {
   return (
+    <>
     <div className="min-h-screen flex flex-col items-center justify-center px-4 py-16">
       <div className="flex flex-col sm:flex-row items-center justify-between w-full max-w-7xl py-6">
         <h1 className="text-3xl font-bold flex items-center gap-2">
@@ -52,6 +54,7 @@ function Categorias() {
         ))}
       </ul>
     </div>
+    </>
   );
 };
 
