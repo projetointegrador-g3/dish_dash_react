@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
 /*Configurações gerais*/
 :root {
   --colorCyan: #209DA8;
@@ -9,11 +11,39 @@
   --colorYellow: #ffa314;
 }
 
-
 body{
   font-family: "Poppins", sans-serif;
   background-color: #fef0e1;
-  color:var(--colorGrey)
+  transition: background 0.3s ease, color 0.3s ease;
+  color:var(--colorGrey);
+  font-size: 18px;
+}
+
+/*Estilos para modo escuro*/
+body.dark {
+  background-color: var(--colorGrey);
+  color: var(--colorWhite);
+  transition: background-color 0.3s ease;
+
+  
+  select {
+    background-color: var(--colorOffWhite);
+    color: var(--colorGrey);
+  }
+
+  input {
+    color: var(--colorWhite);
+    background-color: black;
+  }
+
+  input[type="radio"] {
+    accent-color: var(--colorRed);
+    
+  }
+
+  a {
+    color: var(--colorOffWhite);
+  }
 }
 
 @theme {
@@ -44,3 +74,4 @@ body{
     color: var(--colorRed);
   }
 }
+

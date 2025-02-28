@@ -1,13 +1,15 @@
 import { BowlSteam, Carrot, ChartDonut, Devices, Hamburger, Popcorn, Video } from '@phosphor-icons/react'
 import Footer from '../../components/footer/Footer';
+import { motion, useScroll, useTransform } from "framer-motion";
 
 function Inicio (){
+    const { scrollY } = useScroll();
+    const y = useTransform(scrollY, [0, 500], ["0%", "50%"]); // Ajusta o deslocamento
+
     return (
         <>
-        <div>
-            
-            <main>
-                <section className="flex justify-around items-center py-5 pl-22">
+            <motion.main style={{ y }}>
+                <section className="flex justify-around items-center py-15 pl-22">
                     <div>
                         <h1 className="text-6xl font-bold mb-4">Sua fome não espera,</h1>
                         <h1 className="text-6xl font-bold mb-4">a gente também não!</h1>
@@ -37,7 +39,7 @@ function Inicio (){
                     <img className="w-130" src="/inicio.gif" alt="Delivery Boy" />
                 </section>
 
-                <section id="service" className="text-center ">
+                <section id="service" className="text-center mt-35 ">
                     <div className="bg-[#d9291a] p-20 flex items-center justify-around text-[#fef0e1] pl-25">
                         <img className="w-90" src="https://ik.imagekit.io/grupo03/DishDash/gestao.svg?updatedAt=1740670005773" alt="" />
                         <div className="flex flex-col gap-4 text-start ">
@@ -84,9 +86,9 @@ function Inicio (){
 
                     
                 </section>
-            </main>
+            </motion.main>
+
             <Footer />
-        </div>
         </>
     )
 }

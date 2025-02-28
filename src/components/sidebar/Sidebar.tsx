@@ -23,7 +23,7 @@ function Sidebar() {
             <Link to="/home"><House size={24} className="cursor-pointer"/></Link>
             <Link to="/categorias"><List size={24} className="cursor-pointer"/></Link>
             <Link to="/produtos"><Package size={24} className="cursor-pointer"/></Link>
-            <Link to="/configuracoes"><div className="mt-60"><Gear size={24} className="cursor-pointer"/></div></Link>
+            <Link to="/configuracoes"><div className="mt-80"><Gear size={24} className="cursor-pointer"/></div></Link>
             </nav>
 
         </aside>
