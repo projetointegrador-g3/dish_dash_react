@@ -19,12 +19,8 @@ function Sobre() {
                         { nome: 'Emily Cristiny', emoji: '🔧', img: 'Emily.png', desc: 'Estudante de Engenharia de Software e desenvolvedora FullStack em mais de 3 linguagens de programação.' },
                         { nome: 'Fernanda Ribeiro', emoji: '🎨', img: 'Fernanda.png', desc: 'Formada em Adm, com expertise na área de design, e fazendo transição para tecnologia.' },
                         { nome: 'Josadaque Ferreira', emoji: '🛠️', img: 'Josadaque.png', desc: 'Como ex-ajudante de obra, migrei para a tecnologia e sou apaixonado por back-end.' },
-<<<<<<< HEAD
                         { nome: 'Victor Pestana', emoji: '🌍', img: 'Victor.png', desc: 'Vivendo anos na Europa, adquiri inglês fluente e estudo sistemas da informação.' },
                         { nome: 'Fernanda Ribeiro', emoji: '🎨', img: 'Fernanda.png', desc: 'Formada em Adm, com expertise na área de design, e fazendo transição para tecnologia.' },
-=======
-                        { nome: 'Victor Pestana', emoji: '🌍', img: 'Victor.png', desc: 'Vivendo anos na Europa, adquiri inglês fluente e estudo segurança da informação.' },
->>>>>>> f6cc7ff85ea6036bdeca1ae8e5d3766810a9fd04
                     ].map((dev, index) => (
 
                         <section key={index} className='flex gap-5 items-start'>
