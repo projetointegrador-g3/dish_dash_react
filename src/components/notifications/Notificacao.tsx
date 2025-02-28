@@ -21,7 +21,7 @@ const Notificacao = () => {
     )}
 
     return (
-        <div className="mt-4 space-y-3 ml-3 mr-185">
+        <div className="mt-4 space-y-3 ml-3">
             {notificacoes.map((notif) => (
             <div
                 key={notif.id}
@@ -32,7 +32,7 @@ const Notificacao = () => {
                 <p className="text-sm ml-8">{notif.mensagem}</p>
                 {!notif.lida && (
                     
-                    <div className="absolute ml-115">
+                    <div className="absolute ml-108">
                         <button onClick={() => marcarComoLida(notif.id)}>
                             <Circle weight="fill" className="text-[#d9291a] flex items-center justify-center text-xs cursor-pointer"/>
                         </button>
