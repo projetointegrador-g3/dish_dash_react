@@ -1,4 +1,5 @@
 import { House, List, Package, Gear } from "@phosphor-icons/react";
+import { Link } from "react-router-dom";
 
 function Sidebar() {
     return (
@@ -7,10 +8,10 @@ function Sidebar() {
             <div className="w-12"><img src="https://ik.imagekit.io/grupo03/DishDash/logo-dd.png?updatedAt=1740669256073" alt="Logo da DishDash"/></div>
 
             <nav className="flex flex-col space-y-6 mt-10">
-                <House size={24} className="cursor-pointer"/>
-                <List size={24} className="cursor-pointer"/>
-                <Package size={24} className="cursor-pointer"/>
-                <div className="mt-60"><Gear size={24} className="cursor-pointer"/></div>
+            <Link to="/home"><House size={24} className="cursor-pointer"/></Link>
+            <Link to="/menu"><List size={24} className="cursor-pointer"/></Link>
+            <Link to="/pedidos"><Package size={24} className="cursor-pointer"/></Link>
+            <Link to="/configuracoes"><div className="mt-60"><Gear size={24} className="cursor-pointer"/></div></Link>
             </nav>
 
         </aside>

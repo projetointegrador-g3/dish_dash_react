@@ -1,8 +1,10 @@
 import { MagnifyingGlass, SignOut } from "@phosphor-icons/react";
+import { Link } from "react-router-dom";
 
 function Navbar() {
+    if (location.pathname === "/login" || location.pathname === "/cadastro" || location.pathname === "/")
     return (
-        <header className="flex justify-between items-center p-8 w-full">
+        <header className="flex justify-between items-center p-8 pb-0 w-full">
 
             <div className="relative pl-5">
                 <input type="text" placeholder="Buscar..." className="bg-black/7 pl-4 pr-10 py-2 rounded-lg border-0 focus:outline-none"/>
@@ -10,8 +12,8 @@ function Navbar() {
             </div>
 
             <div className="flex items-center space-x-6 text-[#d9291a] pr-5">
-                <span className="cursor-pointer font-bold">Perfil</span>
-                <span className="cursor-pointer flex items-center gap-1 font-bold">Sair <SignOut size={20}/></span>
+                <span className="cursor-pointer font-bold"><Link to="/perfil">Perfil</Link></span>
+                <span className="cursor-pointer flex items-center gap-1 font-bold"><Link to="/sair">Sair</Link><SignOut size={20}/></span>
             </div>
 
         </header>

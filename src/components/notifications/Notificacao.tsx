@@ -1,4 +1,4 @@
-import { Circle, CircleHalfTilt, CircleWavy, CircleWavyCheck, CircleWavyWarning, Dot } from "@phosphor-icons/react";
+import { AlignLeft, Circle, Hamburger } from "@phosphor-icons/react";
 import { useState } from "react";
 
 interface Notificacao {
@@ -21,23 +21,30 @@ const Notificacao = () => {
     )}
 
     return (
-        <div className="mt-4 space-y-3 ml-3 mr-50">
+        <div className="mt-4 space-y-3 ml-3 mr-150">
             {notificacoes.map((notif) => (
             <div
                 key={notif.id}
-                className={`p-2 rounded-md border-0 ${notif.lida ? 'bg-gray-200' : 'bg-black/7'}`}
+                className={`p-2 rounded-md border-0 ${notif.lida ? 'bg-[#d9291a]/7 text-gray-500' : 'bg-black/7'}`}
             >
             
-            <p className="text-sm">{notif.mensagem}</p>
-            {!notif.lida && (
-            
-            <button
-                onClick={() => marcarComoLida(notif.id)}
-                className="mt-2 text-xs text-blue-600"
-                >
-                <Circle className="text-[#d9291a] flex items-center justify-center fill-[#d9291a]"/>
-            </button>
-            )}
+            <div className="flex items-center">
+                <p className="text-sm ml-8">{notif.mensagem}</p>
+                {!notif.lida && (
+                    
+                    <div className="absolute ml-115">
+                        <button onClick={() => marcarComoLida(notif.id)}>
+                            <Circle weight="fill" className="text-[#d9291a] flex items-center justify-center text-xs cursor-pointer"/>
+                        </button>
+                    </div>
+                )}
+                
+                <div className="absolute"> 
+                    {notif.id ===1 ? (
+                        <Hamburger className="bg-[#FFA314] rounded w-6 h-5 flex items-center justify-center"/>
+                    ):(<AlignLeft className="bg-[#209DA8] rounded w-6 h-5 flex items-center justify-center"/>)}
+                </div>
+            </div>
         </div>
     ))}
     </div>
