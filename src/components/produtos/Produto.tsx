@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useProdutoFunctions } from "./ProdutoFunctions";
-import { FaSearch, FaEdit, FaTrash, FaPlus } from "react-icons/fa";
+import { FaEdit, FaTrash, FaPlus } from "react-icons/fa";
 import "./produto.css";
 import { Pencil, PlusSquare, Trash } from "@phosphor-icons/react";
 import { Input } from "../ui/input";
@@ -114,6 +114,15 @@ export default function Produto() {
               key={produto.id || index}
               className="bg-white p-4 rounded-lg shadow-2xl relative"
             >
+              {/* Exibição da imagem do produto */}
+              {produto.foto && (
+                <img
+                  src={produto.foto} // A URL da foto do produto
+                  alt={produto.nome || "Imagem do Produto"}
+                  className="w-full h-48 object-cover rounded-md mb-4"
+                />
+              )}
+
               <h3 className="text-xl font-semibold mt-3 text-center">
                 {produto.nome || "Sem Nome"}
               </h3>
@@ -153,6 +162,7 @@ export default function Produto() {
             </div>
           ))}
         </div>
+
       </main>
 
       {/* Modal de edição */}
@@ -218,12 +228,20 @@ export default function Produto() {
                 />
               </div>
               <div className="mb-4">
+<<<<<<< HEAD
                 <label className="block text-sm font-semibold">Foto</label>
                 <Input
                   type="file"
+=======
+                <label className="block text-sm font-semibold">Foto (URL)</label>
+                <input
+                  type="text"
+>>>>>>> 97aadb36ed7e61f71b79bea7ed1b13aaba148a95
                   name="foto"
-                  onChange={(e) => lidarComMudancaDeInput(e, "foto")}
+                  value={produtoEditado?.foto || ""}
+                  onChange={lidarComMudancaDeInput}
                   className="border px-4 py-2 rounded w-full bg-white"
+                  placeholder="Insira o link da imagem"
                 />
               </div>
               <div className="flex justify-center gap-6 mt-4">
@@ -307,12 +325,20 @@ export default function Produto() {
                 />
               </div>
               <div className="mb-4">
+<<<<<<< HEAD
                 <label className="block text-sm font-semibold">Foto</label>
                 <Input
                   type="file"
+=======
+                <label className="block text-sm font-semibold">Foto (URL)</label>
+                <input
+                  type="text"
+>>>>>>> 97aadb36ed7e61f71b79bea7ed1b13aaba148a95
                   name="foto"
-                  onChange={(e) => lidarComMudancaDeInputNovoProduto(e, "foto")}
+                  value={novoProduto.foto || ""}
+                  onChange={lidarComMudancaDeInputNovoProduto}
                   className="border px-4 py-2 rounded w-full bg-white"
+                  placeholder="Insira o link da imagem"
                 />
               </div>
               <div className="flex justify-between">

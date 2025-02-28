@@ -90,6 +90,9 @@ export const useProdutoFunctions = () => {
     }
   };
   
+  
+  
+  
   // Função para buscar os produtos novamente
   const fetchProdutos = async () => {
     try {
