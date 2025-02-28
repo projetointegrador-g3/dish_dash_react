@@ -22,20 +22,3 @@ function App() {
 }
 
 export default App
-/*function App() {
-
-  return (
-    <>
-      <ToastContainer />
-
-      <Routes>
-        <Route>
-          <Route path="/" element={<Home />} />
-  
-        </Route>
-      </Routes>
-    </>
-  )
-}
-
-export default App*/
