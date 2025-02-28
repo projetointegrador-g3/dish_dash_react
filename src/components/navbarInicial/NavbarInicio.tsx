@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 function NavbarInicio (){
     return (
         <>
-            <header className="flex justify-around gap-70" >
+            <header className="flex justify-around gap-70 border-b border-stone-400" >
                 <a href="/">
                 <img className="w-20" src="https://i.imgur.com/pxKDdcY.png" alt="" />
                 </a>
                 
-                <nav className="flex items-center gap-4">
+                <nav className="flex items-center gap-4 ">
                     <ul className="flex gap-4">
                         <li><Link to="/home">Dashboard</Link></li>
                         <li><a href="/#service">Serviços</a></li>

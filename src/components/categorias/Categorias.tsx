@@ -3,6 +3,7 @@ import { useCategoriaFunctions } from "./CategoriaFunction";
 import "./Categorias.css"; 
 import * as react from '@phosphor-icons/react';
 import { Input } from "../ui/input";
+import { FaPlus } from "react-icons/fa";
 
 const initialCategoria = [
   { id: 1, name: "Vegetariano", icon: <react.Archive /> },
@@ -40,16 +41,18 @@ export default function Produto() {
   } = useCategoriaFunctions(initialCategoria);
 
   return (
-    <div className="flex flex-col md:flex-row h-screen font-poppins">
-      <main className="flex-1 p-8 bg-[var(--colorOffWhite)]">
+    <div className="flex flex-col md:flex-row h-screen">
+      <main className="flex-1 p-8">
         <h2 className="text-2xl font-semibold mb-3 flex flex-col items-center sm:flex-row sm:justify-between gap-4 sm:gap-0">
           <span>Categorias</span>
+
           <button 
             onClick={openAddModal}
-            className="bg-[var(--colorYellow)]  px-4 py-3 rounded flex items-center gap-3 hover:text-[var(--colorOffWhite)] hover:bg-[var(--colorRed)] cursor-pointer hover:scale-105 transition duration-300 ease-in-out"
+            className="bg-[var(--colorYellow)]  px-4 py-3 rounded 
+            flex items-center gap-3 hover:text-[var(--colorOffWhite)] hover:bg-[var(--colorRed)] cursor-pointer hover:scale-105 transition duration-300 ease-in-out"
           >
-            <PlusSquare className=""/> 
-            <p className="text-sm font-semibold">Adicionar nova Categoria</p>
+            <FaPlus className="text-xs font-semibold"/> 
+            <p className="text-sm font-semibold">Adicionar nova categoria</p>
           </button>
         </h2>
 
