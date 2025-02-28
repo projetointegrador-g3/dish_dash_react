@@ -31,6 +31,7 @@ export default App
       <Routes>
         <Route>
           <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
   
         </Route>
       </Routes>
