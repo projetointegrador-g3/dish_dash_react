@@ -1,0 +1,35 @@
+/*Configs Gerais*/
+:root {
+    --black: #ec1809;
+    --dark-blue: #22333B;
+    --beige: #EAE0D5;
+    --light-brown: #C6AC8F;
+    --brown: #5E503F;
+    --light-gray: #EEF0F2;
+    --off-white: #FAFAFF;
+    --grayish-white: #ECEBE4;
+    --soft-gray: #DADDD8;
+    --dark-gray: #1C1C1C;
+  }
+
+.navbar_style {
+    background-color: var(--black);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: var(--off-white);
+
+    a {
+        color: var(--light-gray);
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: var(--light-brown);
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+    }
+}
