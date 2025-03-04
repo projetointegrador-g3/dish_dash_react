@@ -2,7 +2,7 @@ import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import './ModalProduto.css'
 import FormProdutos from '../formprodutos/FormProdutos';
-import { FaPlus } from 'react-icons/fa';
+import { PlusSquare } from '@phosphor-icons/react';
 
 function ModalProduto() {
     return (
@@ -13,10 +13,10 @@ function ModalProduto() {
                         <span>Produtos</span>
 
                         <button
-                            className="bg-[var(--colorYellow)] text-black px-4 py-3 rounded flex
-                                           items-center gap-3 hover:bg-[var(--colorYellowDark)] hover:scale-105 transition duration-300 ease-in-out"
+                            className="bg-[var(--colorYellow)] text-[var(--colorGrey)] px-4 py-2 rounded flex
+                                           items-center gap-3 hover:bg-[var(--colorRed)] hover:scale-105 ease-in-out cursor-pointer"
                         >
-                            <FaPlus className="text-xs font-semibold" />
+                            <PlusSquare className="size-6" />
                             <p className="text-sm font-semibold">Adicionar novo produto</p>
                         </button>
                     </h2>

@@ -5,6 +5,8 @@ import { Produto } from "../../../model/Produto";
 import { atualizar, buscar, cadastrar } from "../../../services/Service";  
 import { ToastAlert } from "../../../utils/ToastAlert";  
 import { RotatingLines } from "react-loader-spinner";  
+import { Button } from "../../ui/button";
+import { Input } from "../../ui/input";
 
 function FormProdutos() {  
     const navigate = useNavigate();  
@@ -98,49 +100,47 @@ function FormProdutos() {
 
     return (  
         <>  
-            <div className="container flex flex-col mx-auto items-center  bg-gray-950 text-amber-50">  
+            <div className="container flex flex-col items-center bg-[var(--colorOffWhite)] text-[var(--colorGrey)]">  
                 <h1 className=" text-4xl text-center my-8">  
                     {id !== undefined ? 'Editar Produto' : 'Cadastrar Produto'}  
                 </h1>  
 
                 <form className="flex flex-col w-1/2 gap-4" onSubmit={gerarNovoProduto}>  
                     <div>  
-                        <input  
+                        <Input  
                             type="text"  
                             placeholder="Nome"  
                             name="nome"  
                             required  
-                            className="border-2 border-slate-700 rounded p-2"  
                             value={produto.nome}  
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />  
                     </div>  
                     <div>  
-                        <input  
+                        <Input  
                             type="number"  
-                            placeholder="preço"  
+                            placeholder="Preço"  
                             name="preco"  
                             required  
-                            className="border-2 border-slate-700 rounded p-2"  
+                            
                             value={produto.preco}  
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />  
                     </div>  
                     <div>  
-                        <input  
+                        <Input  
                             type="text"  
-                            placeholder="imagem ex.:(https://ik.imagekit.io/oois5ivj4v/E-commece%20game/drive-download-20250117T181147Z-001/kena.png?updatedAt=1737137715314)"  
+                            placeholder="Link da Imagem (https://imagem.png)"  
                             name="foto"  
-                            required  
-                            className="border-2 border-slate-700 rounded p-2"  
+                            required
                             value={produto.foto}  
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />  
                     </div>  
                     <div>  
-                        <input  
+                        <label htmlFor="">Informações Nutricionais</label>
+                        <Input  
                             type="text"  
-                            placeholder="info_nutricionais"  
+                            placeholder="Gluten: Sim; Lactose: Sim; Alergicos: Amendoim, Frutos do mar..."  
                             name="info_nutricionais"  
-                            required  
-                            className="border-2 border-slate-700 rounded p-2"  
+                            required
                             value={produto.info_nutricionais}  
                             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} />  
                     </div>  
@@ -149,7 +149,7 @@ function FormProdutos() {
                         <select  
                             name="categoria"  
                             id="categoria"  
-                            className='border p-2 border-slate-800 rounded'  
+                            className='flex h-10 w-full rounded-md border border-stone-400 bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50'  
                             onChange={(e) => buscarCategoriaPorID(e.currentTarget.value)}>  
                             <option value="" selected disabled>Selecione uma Categoria</option>  
 
@@ -160,10 +160,9 @@ function FormProdutos() {
 
                         </select>  
                     </div>  
-                    <button  
+                    <Button  
                         type='submit'  
-                        className="hover:bg-[var(--colorYellow)] rounded disabled:bg-slate-200 bg-[var(--colorRed)]  
-                               text-white font-bold w-1/2 mx-auto py-2 flex justify-center"  
+                        className="cursor-pointer"  
                         disabled={carregamentoCategoria}  
                     >  
                         {isLoading ? (  
@@ -174,9 +173,9 @@ function FormProdutos() {
                                 width="25"  
                                 visible={true}  
                             />) : (  
-                            <span>{id !== undefined ? 'Autalizar' : 'Cadastrar'}</span>  
+                            <span>{id !== undefined ? 'Atualizar' : 'Cadastrar'}</span>  
                         )}  
-                    </button>  
+                    </Button>  
                 </form>  
             </div>  
 

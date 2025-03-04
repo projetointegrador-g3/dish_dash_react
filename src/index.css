@@ -4,10 +4,12 @@
 /*Configurações gerais*/
 :root {
   --colorCyan: #209DA8;
+  --colorCyanDark: #1a838d;
   --colorWhite: #f4f4f4;
   --colorGrey: #191919;
   --colorOffWhite: #fef0e1;
   --colorRed: #d9291a;
+  --colorRedDark: #b22114;
   --colorYellow: #ffa314;
 }
 
@@ -74,3 +76,5 @@ body.dark {
     color: var(--colorRed);
   }
 }
+
+

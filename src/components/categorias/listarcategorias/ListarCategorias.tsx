@@ -36,10 +36,9 @@ function ListarCategorias() {
            />
         )}
    
-    <div className="flex justify-center w-full my-4">
+    <div className="flex justify-center w-full">
         <div className="container flex flex-col">
-            <div className="grid grid-cols-1  
-                            lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-4">
                     {categorias.map((categoria) => (
                          <CardCategorias key={categoria.id} categoria={categoria} />
                     ))}

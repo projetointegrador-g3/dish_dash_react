@@ -3,6 +3,7 @@ import FormCategoria from '../formcategoria/FormCategoria';
 import 'reactjs-popup/dist/index.css';
 import './ModalCategoria.css'
 import { FaPlus } from 'react-icons/fa';
+import { PlusSquare } from '@phosphor-icons/react';
 
 
 
@@ -19,11 +20,11 @@ function ModalCategoria() {
                       <span>Categoria</span>
                       
                       <button
-                        className="bg-[var(--colorYellow)] text-black px-4 py-3 rounded flex
-                         items-center gap-3 hover:bg-[var(--colorYellowDark)] hover:scale-105 transition duration-300 ease-in-out"
+                        className="bg-[var(--colorYellow)] px-4 py-2 rounded flex
+                         items-center gap-3 hover:bg-[var(--colorRed)] hover:scale-105 ease-in-out cursor-pointer"
                       >
-                        <FaPlus className="text-xs font-semibold" />
-                        <p className="text-sm font-semibold">Adicionar nova Categoria</p>
+                        <PlusSquare className="size-6" />
+                        <p className="text-sm font-semibold">Adicionar nova categoria</p>
                       </button>
                     </h2>
          }

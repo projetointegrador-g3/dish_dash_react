@@ -102,10 +102,10 @@ function ListarProdutosPorNome() {
 
   return (  
     <>  
-			<div className="bg-gray-200 flex flex-col justify-center container">  
-				<div className="flex flex-col mx-4">  
+			<div className="bg-[var(--colorWhite)] rounded flex flex-col justify-center container">  
+				<div className="flex flex-col mx-4 p-4">  
 					<h1 className="text-4xl text-center my-4">  
-						Resultados da busca por <span className="italic text-teal-800">{nome}</span>  
+						Resultados da busca por <span className="italic text-[var(--colorCyan)]">{nome}</span>  
 					</h1>  
 
 					{isLoading && (  
@@ -123,7 +123,7 @@ function ListarProdutosPorNome() {
 					)}  
 
 					<div className="flex gap-4">  
-						<div className="flex flex-col w-1/5 ml-4 my-15 p-4 border rounded-lg border-slate-400">  
+						<div className="flex flex-col w-1/5 ml-4 my-15 p-8 border rounded-lg border-slate-400">  
               <h3 className="text-base font-bold py-2">Preço:</h3>  
               <div className="flex gap-2">  
                   <input  
@@ -179,7 +179,7 @@ function ListarProdutosPorNome() {
               </div>  
 							<div className="mt-8">  
 								<button  
-									className="flex justify-center w-1/2 py-2 mx-auto font-bold text-white rounded bg-red-600 hover:bg-yellow-500"  
+									className="flex justify-center w-2/2 py-2 mx-auto font-bold text-white rounded bg-[var(--colorRed)] hover:bg-[var(--colorYellow)]"  
 									onClick={limparFiltroPreco}>  
 									Limpar  
 								</button>  
@@ -187,7 +187,7 @@ function ListarProdutosPorNome() {
 						</div>  
 
 						{!isLoading && produtosFiltrados.length > 0 && (  
-							<div className="container mx-auto my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">  
+							<div className="container mx-auto my-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-60">  
 								{produtosFiltrados.map((produto) => (  
 									<CardProdutos key={produto.id} produto={produto} />  
 								))}  

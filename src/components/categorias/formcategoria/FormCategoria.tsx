@@ -4,6 +4,8 @@ import { Categoria } from "../../../model/Categoria";
 import { atualizar, buscar, cadastrar } from "../../../services/Service";
 import { RotatingLines } from "react-loader-spinner";
 import { ToastAlert } from "../../../utils/ToastAlert";
+import { Input } from "../../ui/input";
+import { Button } from "../../ui/button";
 
 function FormCategoria() {
 
@@ -65,7 +67,7 @@ function FormCategoria() {
 
 
     return (
-        <div className="text-amber-50 container flex flex-col items-center justify-center mx-auto bg-gray-950 p-4">
+        <div className="container flex flex-col items-center justify-center mx-auto p-2">
             <h1 className="text-4xl text-center my-8">
                  {id === undefined ? 'Cadastrar Categoria' : 'Editar Categoria'}
             </h1>
@@ -73,29 +75,27 @@ function FormCategoria() {
             <form className="w-1/2 flex flex-col gap-4" onSubmit={gerarNovaCategoria}>
                 <div className="flex flex-col gap-2">
                     <label htmlFor="categoria">Nome Categoria</label>
-                    <input
+                    <Input
                         type="text"
                         placeholder="Nome categoria "
                         name='categoria'
-                        className="border-2 border-slate-700 rounded p-2"
                         value={categoria.categoria}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                     />
                 </div>
                 <div className="flex flex-col gap-2">
                     <label htmlFor="descricao">Descrição</label>
-                    <input
+                    <Input
                         type="text"
                         placeholder="Descrição "
                         name='descricao'
-                        className="border-2 border-slate-700 rounded p-2"
                         value={categoria.descricao}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                     />
                 </div>
-                <button
+                <Button
                     className="rounded text-slate-100 bg-[var(--colorYellow)]
-                               hover:bg-red-700 w-1/2 py-2 mx-auto flex justify-center"
+                             w-1/2 py-2 mx-auto flex justify-center cursor-pointer"
                     type="submit">
                         {isLoading ?
                         <RotatingLines
@@ -107,7 +107,7 @@ function FormCategoria() {
                         /> :
                         <span>{id === undefined ? 'Cadastrar' : 'Atualizar'}</span>
                         }
-                </button>
+                </Button>
             </form>
         </div>
     );

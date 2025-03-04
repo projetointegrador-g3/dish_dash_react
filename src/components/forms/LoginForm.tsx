@@ -23,7 +23,7 @@ export function LoginForm({
         <div className='grid gap-6'>
           <div className='grid gap-2'>
             <Label htmlFor='email'>Email</Label>
-            <Input id='email' type='email' placeholder='admin@email.com' required />
+            <Input id='email' type='email' placeholder='admin@email.com' />
           </div>
   
           {/* Senha */}
@@ -36,7 +36,7 @@ export function LoginForm({
                 {/* Esqueceu sua senha? */}
               </a>
             </div>
-            <Input id='password' type='password' placeholder='********' required />
+            <Input id='password' type='password' placeholder='********' />
           </div>
 
           {/* Lembrar de mim */}
@@ -54,7 +54,9 @@ export function LoginForm({
 
 
           {/* Botões */}
-          <Button type='submit' className='w-full'>Entrar</Button>
+          <Button type='submit' className='w-full'>
+            <Link to="/home">Entrar</Link>
+            </Button>
 
           {/* Barra horizontal */}
           <div className='relative text-center text-sm '>

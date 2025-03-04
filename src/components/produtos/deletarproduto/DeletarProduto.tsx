@@ -51,22 +51,22 @@ function DeletarProduto() {
     }
 
     return (
-        <div className='container w-1/3 mx-auto'>
+        <div className='container w-2/4 mx-auto border rounded-lg p-4 mt-20'>
             <h1 className='text-3xl text-center my-4'>Deletar Produto</h1>
-            <p className='text-center font-medium mb-4'>
+            <p className='text-center mb-4'>
                 Você tem certeza de que deseja apagar o produto a seguir?</p>
-            <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
-                
-                <p className=' text-2xl h-full text-center bg-white p-6 rounded-lg shadow-2xl relative'>{produto.nome}</p>
-                <div className="flex ">
+
+            <div className='flex flex-col overflow-hidden justify-between'>
+                <p className='text-2xl h-full text-center p-6 relative'>{produto.nome}</p>
+
+                <div className="flex gap-10">
                     <button 
-                        className='flex justify-center text-center text-slate-100 bg-red-400 hover:bg-red-600 w-full py-2 hover:scale-105 transition duration-300  ease-in-out'
+                        className='flex justify-center text-center rounded-lg text-[var(--colorWhite)] bg-[var(--colorRed)] w-full py-2 hover:bg-[var(--colorRedDark)] cursor-pointer'
                         onClick={retornar}>
                         Não
                     </button>
                     <button 
-                        className='w-full text-slate-100 hover:bg-[var(--colorYellow)] 
-                                   bg-amber-400 hover:scale-105 transition duration-300 ease-in-out flex items-center justify-center'
+                        className='flex justify-center text-center rounded-lg text-[var(--colorWhite)] bg-[var(--colorCyan)] w-full py-2 hover:bg-[var(--colorCyanDark)] cursor-pointer'
                                    onClick={deletarProduto}>
                         {isLoading ?
                             <RotatingLines
