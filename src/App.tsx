@@ -15,6 +15,7 @@ import DeletarCategoria from "./components/categorias/deletarcategoria/DeletarCa
 import ListaProdutos from "./components/produtos/listaprodutos/ListaProdutos";
 import FormProdutos from "./components/produtos/formprodutos/FormProdutos";
 import DeletarProduto from "./components/produtos/deletarproduto/DeletarProduto";
+import ListarProdutosPorNome from "./components/produtos/listarprodutopornome/ListarProdutosPorNome";
 
 
 
@@ -53,6 +54,7 @@ export default function App() {
                 <Route path="/cadastrarproduto" element={<FormProdutos />} /> 
                 <Route path="/editarproduto/:id" element={<FormProdutos />} />
                 <Route path="/deletarproduto/:id" element={<DeletarProduto />} />
+                <Route path="/consultarnome/:nome" element={<ListarProdutosPorNome />} />
                 <Route path="/perfil" element={<Perfil />} />
                 <Route path="/configuracoes" element={<Configuracao />} />
               </Routes> 

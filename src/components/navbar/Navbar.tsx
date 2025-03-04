@@ -1,8 +1,23 @@
 import { MagnifyingGlass, SignOut } from "@phosphor-icons/react";
-import { Link, useLocation } from "react-router-dom";
+import { useState, ChangeEvent, FormEvent } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 // Regra para não aparecer no Login, Sobre e page Inicial
 function Navbar() {
+
+    const navigate = useNavigate()
+
+	const [nome, setNome] = useState<string>("")
+
+	function handleBuscarProdutos(e: ChangeEvent<HTMLInputElement>){
+		setNome(e.target.value)
+	}
+
+	function buscarProdutos(e: FormEvent<HTMLFormElement>){
+		e.preventDefault()
+		navigate(`/consultarnome/${nome}`)
+		setNome('')
+	}
 
     const location=useLocation()
 
@@ -31,14 +46,32 @@ function Navbar() {
         <>
         <header className="flex justify-between items-center navbar_dash
         p-8 pb-0 w-full mb-3 transition-all">
-
+            
             <div className="relative pl-5">
-                <input type="text" placeholder="Buscar..." 
+
+            <form 
+				className="flex items-center justify-center w-full"
+				onSubmit={buscarProdutos}
+			>
+                <input 
+                type="text" 
+                placeholder="Buscar... "
+                name="nome"
+				required
+				value={nome}
+				onChange={(e: ChangeEvent<HTMLInputElement>) => handleBuscarProdutos(e)} 
                 className="bg-black/7 pl-4 pr-10 py-2 rounded-lg border-0 text-stone-600 focus:outline-none"/>
                 
+                <button
+                 type="submit">
                 <MagnifyingGlass 
                 className="absolute right-3 top-1/2 transform -translate-y-1/2 
                 text-[#d9291a]" size={20}/>
+                </button>
+
+
+            </form>
+                
             </div>
 
             <div className="flex items-center space-x-6 text-[#d9291a] pr-5">

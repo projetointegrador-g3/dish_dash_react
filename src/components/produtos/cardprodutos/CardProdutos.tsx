@@ -40,7 +40,7 @@ function CardProdutos({produto}: CardProdutosProps) {
                                   className='mt-1.5' />
                             <p className="text- font-bold mt-3 text-center">{produto.nome}</p>
                             <p className='text-green-700 font-semibold text-center'>R${produto.preco.toFixed(2)}</p>         
-                            <p className='text-gray-700 text-sm text-center'>Categoria:{produto.categoria?.categoria}</p>
+                            <p className='text-gray-700 text-sm text-center'>{produto.categoria?.categoria}</p>
                             <p className=' text-sm text-center'>{produto.info_nutricionais}</p>
                             <p className="text-sm text-center text-red-800">
                             { produto.preco > 19.00 && produto.categoria?.categoria === "Prato Principal" ? 'Promoção do dia!' : ''}
